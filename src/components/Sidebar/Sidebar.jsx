@@ -16,6 +16,12 @@ function Sidebar() {
         <li>
           <Link to="/capitulo2">Capítulo 2</Link>
         </li>
+        <li>
+          <Link to="/capitulo3">Capítulo 3</Link>
+        </li>
+        <li>
+          <Link to="/capitulo4">Capítulo 4</Link>
+        </li>
       </ul>
     </div>
   );
