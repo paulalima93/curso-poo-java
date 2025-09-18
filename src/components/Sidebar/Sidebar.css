@@ -1,0 +1,31 @@
+.sidebar {
+  width: 220px;
+  background-color: #003049; /* azul escuro */
+  color: #fdf0d5; /* texto claro */
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  color: #780000; /* vermelho escuro */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 15px 0;
+}
+
+.sidebar a {
+  color: #fdf0d5;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.sidebar a:hover {
+  color: #c1121f; /* vermelho médio */
+}

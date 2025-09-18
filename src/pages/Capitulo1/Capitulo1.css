@@ -1,0 +1,41 @@
+p, li {
+  text-align: left;
+}
+
+.page.capitulo1 {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #003049;
+}
+
+.page.capitulo1 h1 {
+  color: #c1121f;
+  margin-bottom: 20px;
+}
+
+.page.capitulo1 h2 {
+  color: #780000;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.page.capitulo1 h3 {
+  color: #003049;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.page.capitulo1 p {
+  text-align: left;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.code-block {
+  background-color: #fdf0d5;
+  padding: 15px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: "Courier New", monospace;
+  margin-bottom: 20px;
+}
