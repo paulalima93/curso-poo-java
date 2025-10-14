@@ -6,6 +6,7 @@ import Capitulo1 from "./pages/Capitulo1/Capitulo1";
 import Capitulo2 from "./pages/Capitulo2/Capitulo2";
 import Capitulo3 from "./pages/Capitulo3/Capitulo3";
 import Capitulo4 from "./pages/Capitulo4/Capitulo4";
+import Capitulo5 from "./pages/Capitulo5/Capitulo5";
 import "./App.css";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="/capitulo2" element={<Capitulo2 />} />
             <Route path="/capitulo3" element={<Capitulo3 />} />
             <Route path="/capitulo4" element={<Capitulo4 />} />
+            <Route path="/capitulo5" element={<Capitulo5 />} />
           </Routes>
         </div>
       </div>

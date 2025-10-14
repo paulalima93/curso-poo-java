@@ -22,6 +22,9 @@ function Sidebar() {
         <li>
           <Link to="/capitulo4">Capítulo 4</Link>
         </li>
+        <li>
+          <Link to="/capitulo5">Capítulo 5</Link>
+        </li>
       </ul>
     </div>
   );
