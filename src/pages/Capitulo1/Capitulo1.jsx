@@ -1,6 +1,6 @@
 import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { okaidia } from "react-syntax-highlighter/dist/esm/styles/prism"; // 
+import { okaidia } from "react-syntax-highlighter/dist/esm/styles/prism";
 import Quiz from "../../components/Quiz/Quiz";
 import "./Capitulo1.css";
 
@@ -39,43 +39,36 @@ function Capitulo1() {
       <section>
         <h2>Programação Procedural x Programação Orientada a Objetos</h2>
         <p>
-          Na <strong>Programação Procedural</strong>, o código é organizado em funções e procedimentos que são chamados em sequência. O foco está nas ações e no fluxo do programa.
+          A <strong>Programação Procedural</strong> organiza o código em funções e procedimentos que são executados em sequência. Cada função realiza uma ação específica, e o foco está principalmente no fluxo do programa, ou seja, na ordem em que as instruções são executadas.
         </p>
         <p>
-          Exemplo: em um sistema de cadastro de clientes, você teria funções separadas para criar cliente, atualizar cliente e deletar cliente. Cada função manipula os dados diretamente.
+          Exemplo: em um sistema de cadastro de clientes, você teria funções separadas para criar, atualizar e deletar clientes. Cada função manipula diretamente os dados, e a lógica de cada operação está espalhada pelo código.
         </p>
         <p>
-          Na <strong>Programação Orientada a Objetos (POO)</strong>, o foco está nos objetos, que combinam dados e comportamentos. Cada objeto representa algo do mundo real ou um conceito abstrato.
+          Já na <strong>Programação Orientada a Objetos (POO)</strong>, o foco principal está nos <strong>objetos</strong>, que representam entidades do mundo real ou conceitos abstratos. Cada objeto combina <strong>atributos</strong> (dados) e <strong>métodos</strong> (ações), encapsulando informações e comportamentos de forma organizada.
         </p>
         <p>
-          Exemplo: no mesmo sistema de cadastro de clientes, você teria uma classe <em>Cliente</em> que define atributos (nome, idade, email) e métodos (cadastrar, atualizar, deletar). Cada cliente do sistema é uma instância dessa classe.
+          Exemplo: no mesmo sistema de cadastro de clientes, você criaria uma classe <em>Cliente</em> que define os atributos (como nome, idade e email) e métodos (como cadastrar, atualizar e deletar). Cada cliente específico do sistema é então uma instância dessa classe, possuindo seus próprios dados e podendo executar ações definidas na classe.
         </p>
       </section>
       
       <section>
         <h2>O que é POO?</h2>
         <p>
-          A <strong>Programação Orientada a Objetos (POO)</strong> organiza o
-          código em objetos que combinam <strong>atributos</strong> e{" "}
-          <strong>métodos</strong>. Um objeto representa algo do mundo real ou
-          um conceito abstrato.
+          A <strong>Programação Orientada a Objetos (POO)</strong> é um paradigma de programação que organiza o código em torno de objetos que possuem <strong>atributos</strong> (representando o estado) e <strong>métodos</strong> (representando o comportamento). Essa abordagem ajuda a criar sistemas mais modulados, reutilizáveis e fáceis de manter.
         </p>
         <p>
-          Exemplo do mundo real: em um jogo de RPG, cada personagem é um
-          objeto, com atributos como <em>nome</em>, <em>vida</em>,{" "}
-          <em>força</em> e métodos como <em>atacar()</em>, <em>defender()</em>.
+          Exemplo no mundo real: em um jogo de RPG, cada personagem é um objeto. Ele pode ter atributos como <em>nome</em>, <em>vida</em> e <em>força</em>, e métodos como <em>atacar()</em> e <em>defender()</em>. Essa organização permite tratar cada personagem de forma independente, mas usando a mesma estrutura definida pela classe.
         </p>
       </section>
 
       <section>
         <h2>Classe e Objeto</h2>
         <p>
-          <strong>Classe</strong>: é o molde ou a planta do objeto. Define
-          atributos e métodos.
+          <strong>Classe</strong>: é o molde ou estrutura que define quais atributos e métodos os objetos de um determinado tipo terão. Pense na classe como uma receita ou planta arquitetônica que especifica os elementos essenciais que cada objeto terá.
         </p>
         <p>
-          <strong>Objeto</strong>: é uma instância da classe. Cada objeto tem
-          seus próprios valores para os atributos.
+          <strong>Objeto</strong>: é uma instância da classe, ou seja, uma ocorrência concreta do molde definido. Cada objeto possui seus próprios valores para os atributos definidos na classe e pode executar os métodos que a classe disponibiliza.
         </p>
 
         <h3>Exemplo em Java - Pessoa</h3>
@@ -108,21 +101,23 @@ joao.apresentar(); // Olá, meu nome é João e tenho 28 anos.`}
         <h3>Exemplo em Java - Carro</h3>
         <SyntaxHighlighter language="java" style={okaidia}>
           {`public class Carro {
-    // Atributos
+    // Atributos do carro que representam seu estado
     String modelo;
     int velocidade;
 
     // Método para acelerar o carro
     public void acelerar(int incremento) {
-        velocidade += incremento; // Aumenta a velocidade
+        // Aumenta a velocidade atual em "incremento"
+        velocidade += incremento;
         System.out.println(modelo + " agora está a " + velocidade + " km/h");
     }
 
     // Método para frear o carro
     public void frear(int decremento) {
-        velocidade -= decremento; // Diminui a velocidade
+        // Diminui a velocidade atual em "decremento"
+        velocidade -= decremento;
         if (velocidade < 0) {
-            velocidade = 0; // Garante que a velocidade não fique negativa
+            velocidade = 0; // Evita que a velocidade fique negativa
         }
         System.out.println(modelo + " agora está a " + velocidade + " km/h");
     }
@@ -137,7 +132,7 @@ Carro uno = new Carro();
 uno.modelo = "Uno";
 uno.velocidade = 0;
 
-// Usando os métodos
+// Usando os métodos para alterar o estado dos carros
 fusca.acelerar(20); // Fusca agora está a 20 km/h
 uno.acelerar(50);   // Uno agora está a 50 km/h
 fusca.frear(10);    // Fusca agora está a 10 km/h
@@ -145,32 +140,32 @@ fusca.frear(10);    // Fusca agora está a 10 km/h
         </SyntaxHighlighter>
       </section>
 
-  <section>
-  <h2>Exercícios para praticar</h2>
-  <ol>
-    <li>
-      Crie uma classe <strong>Aluno</strong> com os atributos <em>nome</em> e <em>nota</em>.
-      Depois, crie um método que exiba: <code>"O aluno X tirou nota Y"</code>.
-    </li>
-    <li>
-      Crie uma classe <strong>ContaBancaria</strong> com os atributos <em>titular</em> e <em>saldo</em>.
-      Adicione métodos para <em>depositar</em> e <em>sacar</em>.
-      Teste criando 2 contas diferentes e executando operações.
-    </li>
-    <li>
-      Crie uma classe <strong>Livro</strong> com os atributos <em>titulo</em>, <em>autor</em> e <em>numeroDePaginas</em>.
-      Depois, crie um método que mostre no console as informações do livro.
-    </li>
-    <li>
-      Explique, com suas próprias palavras, a diferença entre uma <strong>classe</strong> e um <strong>objeto</strong>.
-    </li>
-  </ol>
+      <section>
+        <h2>Exercícios para praticar</h2>
+        <ol>
+          <li>
+            Crie uma classe <strong>Aluno</strong> com os atributos <em>nome</em> e <em>nota</em>.
+            Depois, crie um método que exiba: <code>"O aluno X tirou nota Y"</code>.
+          </li>
+          <li>
+            Crie uma classe <strong>ContaBancaria</strong> com os atributos <em>titular</em> e <em>saldo</em>.
+            Adicione métodos para <em>depositar</em> e <em>sacar</em>.
+            Teste criando 2 contas diferentes e executando operações.
+          </li>
+          <li>
+            Crie uma classe <strong>Livro</strong> com os atributos <em>titulo</em>, <em>autor</em> e <em>numeroDePaginas</em>.
+            Depois, crie um método que mostre no console as informações do livro.
+          </li>
+          <li>
+            Explique, com suas próprias palavras, a diferença entre uma <strong>classe</strong> e um <strong>objeto</strong>.
+          </li>
+        </ol>
 
-  <p className="note">
-    ⚡ Dica: tente resolver esses exercícios no IntelliJ IDEA, criando um novo projeto em Java. 
-    Assim você pratica de verdade e ganha confiança.
-  </p>
-</section>
+        <p className="note">
+          ⚡ Dica: tente resolver esses exercícios no IntelliJ IDEA, criando um novo projeto em Java.
+          Assim você pratica na prática e consolida o entendimento dos conceitos de classes, objetos e métodos.
+        </p>
+      </section>
 
       <section>
         <h2>Quiz - Teste seus conhecimentos</h2>

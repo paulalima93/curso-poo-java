@@ -51,11 +51,14 @@ function Capitulo2() {
             <section>
                 <h2>Construtores</h2>
                 <p>
-                    Um <strong>construtor</strong> é um método especial usado para inicializar objetos.
-                    Ele sempre tem o mesmo nome da classe e não possui tipo de retorno.
+                    Um <strong>construtor</strong> é um tipo especial de método usado para criar e inicializar objetos de uma classe.
+                    Diferente de métodos comuns, o construtor sempre tem o <strong>mesmo nome da classe</strong> e <strong>não possui tipo de retorno</strong>, nem mesmo <code>void</code>.
                 </p>
                 <p>
-                    Quando criamos um objeto com <code>new</code>, o construtor é chamado automaticamente.
+                    Ao criar um objeto usando a palavra-chave <code>new</code>, o construtor correspondente é chamado automaticamente, garantindo que o objeto comece sua existência com valores definidos ou configurados corretamente.
+                </p>
+                <p>
+                    Se você não definir nenhum construtor em sua classe, o Java cria automaticamente um <strong>construtor padrão sem parâmetros</strong>, que inicializa os atributos com valores padrão (zero para números, <code>false</code> para boolean e <code>null</code> para objetos).
                 </p>
 
                 <h3>Exemplo em Java - Pessoa com Construtor</h3>
@@ -64,19 +67,20 @@ function Capitulo2() {
     private String nome;
     private int idade;
 
-    // Construtor
+    // Construtor: inicializa os atributos da classe ao criar o objeto
     public Pessoa(String nome, int idade) {
-        this.nome = nome;
-        this.idade = idade;
+        this.nome = nome;  // Define o nome do objeto
+        this.idade = idade; // Define a idade do objeto
     }
 
+    // Método que apresenta os dados do objeto
     public void apresentar() {
         System.out.println("Sou " + nome + " e tenho " + idade + " anos.");
     }
 }
 
-// Criando objetos
-Pessoa maria = new Pessoa("Maria", 20);
+// Criando objetos com construtor
+Pessoa maria = new Pessoa("Maria", 20); // Construtor chamado automaticamente
 Pessoa pedro = new Pessoa("Pedro", 30);
 
 maria.apresentar(); // Saída: Sou Maria e tenho 20 anos.
@@ -87,11 +91,13 @@ pedro.apresentar(); // Saída: Sou Pedro e tenho 30 anos.`}
             <section>
                 <h2>Sobrecarga de Métodos</h2>
                 <p>
-                    <strong>Sobrecarga</strong> acontece quando criamos vários métodos com o mesmo nome,
-                    mas assinaturas diferentes (parâmetros diferentes).
+                    <strong>Sobrecarga de métodos</strong> (method overloading) ocorre quando criamos múltiplos métodos com o <strong>mesmo nome</strong> dentro da mesma classe, mas com <strong>assinaturas diferentes</strong> — ou seja, diferentes números ou tipos de parâmetros.
                 </p>
                 <p>
-                    Isso deixa o código mais flexível e fácil de ler.
+                    Isso permite que a mesma ação seja realizada de formas diferentes, dependendo do contexto ou dos dados fornecidos, tornando o código mais legível, flexível e organizado.
+                </p>
+                <p>
+                    A sobrecarga não depende do tipo de retorno, apenas da lista de parâmetros. Ou seja, dois métodos com mesmo nome e parâmetros iguais, mas tipos de retorno diferentes, não configuram sobrecarga e causarão erro de compilação.
                 </p>
 
                 <h3>Exemplo em Java - Calculadora</h3>
@@ -102,18 +108,18 @@ pedro.apresentar(); // Saída: Sou Pedro e tenho 30 anos.`}
         return a + b;
     }
 
-    // Sobrecarga: método para somar três números inteiros
+    // Sobrecarga: soma três números inteiros
     public int somar(int a, int b, int c) {
         return a + b + c;
     }
 
-    // Sobrecarga: método para somar dois números decimais
+    // Sobrecarga: soma dois números decimais (double)
     public double somar(double a, double b) {
         return a + b;
     }
 }
 
-// Testando
+// Testando a sobrecarga de métodos
 Calculadora calc = new Calculadora();
 System.out.println(calc.somar(2, 3));       // 5
 System.out.println(calc.somar(2, 3, 4));    // 9
@@ -137,13 +143,12 @@ System.out.println(calc.somar(2.5, 3.7));   // 6.2`}
                         apenas com <em>nome</em>, ou com <em>nome</em> e <em>nota</em>.
                     </li>
                     <li>
-                        Explique, com suas próprias palavras, o que é <strong>sobrecarga de métodos</strong>.
+                        Explique, com suas próprias palavras, o que é <strong>sobrecarga de métodos</strong> e por que é útil.
                     </li>
                 </ol>
 
                 <p className="note">
-                    ⚡ Dica: pratique criando os exemplos no IntelliJ IDEA. Tente variar os valores para ver como
-                    os construtores e métodos sobrecarregados funcionam.
+                    ⚡ Dica: pratique criando os exemplos no IntelliJ IDEA. Experimente variar os valores passados para os construtores e métodos sobrecarregados, observando como cada versão do método se comporta.
                 </p>
             </section>
 

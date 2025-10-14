@@ -23,7 +23,11 @@ function Capitulo4() {
     },
     {
       question: "Qual é a diferença entre sobrecarga e sobrescrita de métodos?",
-      options: ["Sobrecarga = mesmo nome, diferentes parâmetros; Sobrescrita = redefinição do método na subclasse", "Sobrecarga = redefinição; Sobrescrita = parâmetros diferentes", "Não há diferença"],
+      options: [
+        "Sobrecarga = mesmo nome, diferentes parâmetros; Sobrescrita = redefinição do método na subclasse",
+        "Sobrecarga = redefinição; Sobrescrita = parâmetros diferentes",
+        "Não há diferença"
+      ],
       correct: "Sobrecarga = mesmo nome, diferentes parâmetros; Sobrescrita = redefinição do método na subclasse",
     }
   ];
@@ -35,25 +39,29 @@ function Capitulo4() {
       <section>
         <h2>O que é Herança?</h2>
         <p>
-          A <strong>herança</strong> permite que uma classe <em>filha</em> reutilize atributos e métodos de uma classe <em>pai</em>.
+          A <strong>herança</strong> é um dos pilares da Programação Orientada a Objetos (POO) que permite que uma classe <em>filha</em> adquira atributos e métodos de uma classe <em>pai</em>. 
         </p>
         <p>
-          Isso ajuda a reduzir repetição de código e facilita manutenção.
+          Com herança, é possível <strong>reaproveitar código existente</strong>, evitando duplicação e facilitando manutenção. A classe filha pode ainda adicionar novos atributos ou métodos, ou modificar comportamentos herdados.
+        </p>
+        <p>
+          Exemplo: em um sistema de animais, podemos ter uma classe genérica <em>Animal</em> com métodos como <code>comer()</code> e <code>dormir()</code>. Classes específicas, como <em>Cachorro</em> e <em>Gato</em>, podem herdar esses métodos e adicionar outros, como <code>latir()</code> ou <code>miar()</code>.
         </p>
       </section>
 
       <section>
         <h2>Exemplo em Java - Herança</h2>
         <SyntaxHighlighter language="java" style={okaidia}>
-          {`// Classe pai
+          {`// Classe pai: define comportamentos comuns a todos os animais
 public class Animal {
     public void comer() {
         System.out.println("O animal está comendo");
     }
 }
 
-// Classe filha
+// Classe filha: herda atributos e métodos da classe Animal
 public class Cachorro extends Animal {
+    // Método específico da classe Cachorro
     public void latir() {
         System.out.println("O cachorro está latindo");
     }
@@ -62,15 +70,32 @@ public class Cachorro extends Animal {
 // Testando
 Cachorro dog = new Cachorro();
 dog.comer(); // Herdado da classe Animal
-dog.latir(); // Específico da classe Cachorro`}
+dog.latir(); // Método específico da classe Cachorro`}
         </SyntaxHighlighter>
+        <p>
+          ✅ Observação: a classe <code>Cachorro</code> não precisou reescrever o método <code>comer()</code> porque já o herdou da classe <code>Animal</code>.
+        </p>
       </section>
 
       <section>
         <h2>Polimorfismo</h2>
         <p>
-          O <strong>polimorfismo</strong> permite que métodos tenham comportamentos diferentes dependendo do objeto que os chama.
+          O <strong>polimorfismo</strong> permite que objetos de diferentes classes respondam de maneira própria a um mesmo método. Em outras palavras, um método com o mesmo nome pode ter comportamentos distintos dependendo do objeto que o chama.
         </p>
+        <p>
+          Existem dois tipos principais de polimorfismo em Java:
+        </p>
+        <ul>
+          <li><strong>Polimorfismo de sobrecarga:</strong> múltiplos métodos com o mesmo nome, mas assinaturas diferentes dentro da mesma classe.</li>
+          <li><strong>Polimorfismo de sobrescrita:</strong> redefinição de um método da classe pai na classe filha, permitindo que cada classe implemente o comportamento que faz sentido para ela.</li>
+        </ul>
+        <p>
+          O polimorfismo facilita a <strong>extensibilidade e a reutilização de código</strong>, permitindo escrever métodos mais genéricos que funcionam para diferentes tipos de objetos.
+        </p>
+      </section>
+
+      <section>
+        <h2>Exemplo em Java - Polimorfismo</h2>
         <SyntaxHighlighter language="java" style={okaidia}>
           {`// Classe pai
 public class Animal {
@@ -79,7 +104,7 @@ public class Animal {
     }
 }
 
-// Classe filha
+// Classe filha Cachorro sobrescreve o método emitirSom
 public class Cachorro extends Animal {
     @Override
     public void emitirSom() {
@@ -87,6 +112,7 @@ public class Cachorro extends Animal {
     }
 }
 
+// Classe filha Gato sobrescreve o método emitirSom
 public class Gato extends Animal {
     @Override
     public void emitirSom() {
@@ -94,25 +120,29 @@ public class Gato extends Animal {
     }
 }
 
-// Testando
+// Testando polimorfismo
 Animal a1 = new Cachorro();
 Animal a2 = new Gato();
+
 a1.emitirSom(); // Au Au!
 a2.emitirSom(); // Miau!`}
         </SyntaxHighlighter>
+        <p>
+          ✅ Observação: embora <code>a1</code> e <code>a2</code> sejam do tipo <code>Animal</code>, eles exibem comportamentos diferentes ao chamar <code>emitirSom()</code>, demonstrando o polimorfismo.
+        </p>
       </section>
 
       <section>
         <h2>Exercícios para praticar</h2>
         <ol>
           <li>
-            Crie uma classe <strong>Funcionario</strong> com atributos nome e salario. Depois crie uma classe <strong>Gerente</strong> que herda de Funcionario e adiciona atributo departamento.
+            Crie uma classe <strong>Funcionario</strong> com atributos <em>nome</em> e <em>salario</em>. Depois crie uma classe <strong>Gerente</strong> que herda de Funcionario e adiciona atributo <em>departamento</em>.
           </li>
           <li>
             Crie uma classe <strong>FormaGeometrica</strong> com método <em>calcularArea()</em>. Depois crie classes <strong>Quadrado</strong> e <strong>Circulo</strong> que sobrescrevem o método para calcular a área correta.
           </li>
           <li>
-            Explique com suas palavras o que é polimorfismo.
+            Explique com suas palavras o que é polimorfismo e dê exemplos do mundo real.
           </li>
         </ol>
       </section>

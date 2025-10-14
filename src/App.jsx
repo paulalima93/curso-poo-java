@@ -7,6 +7,8 @@ import Capitulo2 from "./pages/Capitulo2/Capitulo2";
 import Capitulo3 from "./pages/Capitulo3/Capitulo3";
 import Capitulo4 from "./pages/Capitulo4/Capitulo4";
 import Capitulo5 from "./pages/Capitulo5/Capitulo5";
+import Capitulo6 from "./pages/Capitulo6/Capitulo6";
+import Capitulo7 from "./pages/Capitulo7/Capitulo7";
 import "./App.css";
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
             <Route path="/capitulo3" element={<Capitulo3 />} />
             <Route path="/capitulo4" element={<Capitulo4 />} />
             <Route path="/capitulo5" element={<Capitulo5 />} />
+            <Route path="/capitulo6" element={<Capitulo6 />} />
+            <Route path="/capitulo7" element={<Capitulo7 />} />
           </Routes>
         </div>
       </div>
